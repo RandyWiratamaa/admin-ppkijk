@@ -34,6 +34,8 @@ Route::delete('/admin/gallery/{id}', [App\Http\Controllers\Admin\GalleryControll
 Route::get('/admin/information', [App\Http\Controllers\Admin\InformationController::class, 'index'])->name('information.index');
 Route::get('/admin/information/create', [App\Http\Controllers\Admin\InformationController::class, 'create'])->name('information.create');
 Route::post('admin/information', [App\Http\Controllers\Admin\InformationController::class, 'store'])->name('information.store');
+Route::get('/admin/information/manage', [App\Http\Controllers\Admin\InformationController::class, 'manage'])->name('information.manage');
+Route::get('/admin/information/detail/{slug}', [App\Http\Controllers\Admin\InformationController::class, 'detail'])->name('information.detail');
 
 Route::get('/admin/agenda', [App\Http\Controllers\Admin\AgendaController::class, 'index'])->name('agenda.index');
 Route::post('/admin/agenda', [App\Http\Controllers\Admin\AgendaController::class, 'store'])->name('agenda.store');

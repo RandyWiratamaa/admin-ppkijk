@@ -35,7 +35,7 @@
                         <a href="#" class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-image h-100 mb-0" style="background-image: url('{{ asset('asset/admin/information_thumbnail/'.$i->thumbnail) }}'); width:500px;" href="#" data-toggle="click-ripple">
                             <div class="block-content block-content-full bg-black-50">
                                 <span class="d-inline-block py-1 px-2 rounded bg-black-75 fs-sm fw-bold text-uppercase text-white">
-                                    Category
+                                    {{ $i->information_category->name }}
                                 </span>
                                 <div class="py-6">
                                     <h3 class="fw-bold text-white mb-1">{{ $i->title }}</h3>
@@ -56,13 +56,6 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center push">
                         {{ $information->links() }}
-                        {{-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                        <li class="page-item"><a class="page-link" href="#">7</a></li> --}}
                     </ul>
                 </nav>
             </div>

@@ -16,11 +16,11 @@
   <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/logo.png') }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/logo.png') }}">
   <link rel="stylesheet" id="css-main" href="{{ asset('asset/css/dashmix.min.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <!-- Modules -->
   @yield('css')
   @vite(['resources/sass/main.scss', 'resources/js/dashmix/app.js'])
   {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
   @yield('js')
 </head>
@@ -170,7 +170,7 @@
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('pages/manage-information') ? ' active' : '' }}" href="#">
+                    <a class="nav-main-link{{ request()->is('pages/manage-information') ? ' active' : '' }}" href="{{ route('information.manage') }}">
                         <span class="nav-main-link-name">Manage Information</span>
                     </a>
                 </li>
@@ -396,7 +396,7 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <script type="text/javascript">
         $('#summernote').summernote({
-            height: 200
+            height: 600
         });
         $('#summernote_visi').summernote({
             height: 200

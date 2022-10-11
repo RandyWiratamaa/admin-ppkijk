@@ -10,11 +10,12 @@ use App\Http\Controllers\Controller;
 
 class InformationController extends Controller
 {
+
     public function index()
     {
         $page_title = "Information";
         $page_type = "List";
-        $information = Information::paginate(4);
+        $information = Information::with(['information_category'])->paginate(4);
         return view('admin.information.index', get_defined_vars());
     }
 
@@ -55,5 +56,22 @@ class InformationController extends Controller
                     alert()->error('Error', 'Failed')
                 ]);
         }
+    }
+
+    public function manage()
+    {
+        $page_title = "Information";
+        $page_type = "Manage";
+        $category = InformationCategory::all();
+        $information = Information::with(['information_category'])->paginate(4);
+        return view('admin.information.manage', get_defined_vars());
+    }
+
+    public function detail($slug)
+    {
+        $page_title = "Information";
+        $page_type = "Detail";
+        $information = Information::where('slug', $slug)->first();
+        return view('admin.information.detail', get_defined_vars());
     }
 }
