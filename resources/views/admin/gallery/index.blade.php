@@ -16,7 +16,7 @@
     </div>
 
     <div class="content">
-        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addGallery">
+        <button class="btn btn-sm btn-alt-danger" data-bs-toggle="modal" data-bs-target="#addGallery">
             <i class="fa fa-fw fa-add"></i> Add
         </button>
         <div class="row items-push js-gallery img-fluid-100 js-gallery-enabled mt-3">

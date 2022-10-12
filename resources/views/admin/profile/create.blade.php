@@ -39,7 +39,8 @@
                             <div class="row mb-4">
                                 <div class="col-md-4">
                                     <label>Logo</label>
-                                    <input type="file" class="form-control" id="logo" name="logo">
+                                    <div id="previewImage"></div>
+                                    <input type="file" class="form-control image" id="logo" name="logo">
                                 </div>
                                 <div class="col-md-4">
                                     <label>No.Telephone</label>
@@ -53,23 +54,23 @@
                             <div class="row mb-4">
                                 <div class="col-md-9">
                                     <label>Deskripsi</label>
-                                    <textarea id="summernote" name="desc" class="form-control"></textarea>
+                                    <textarea id="note" name="desc" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-6">
                                     <label>Visi</label>
-                                    <textarea id="summernote_visi" name="visi" class="form-control"></textarea>
+                                    <textarea id="note" name="visi" class="form-control"></textarea>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Misi</label>
-                                    <textarea id="summernote_misi" name="misi" class="form-control"></textarea>
+                                    <textarea id="note" name="misi" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-6">
                                     <label>Alamat</label>
-                                    <textarea id="summernote_address" name="address" class="form-control"></textarea>
+                                    <textarea id="note" name="address" class="form-control"></textarea>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row mb-4">
@@ -96,8 +97,7 @@
                             </div>
                             <div class="col-sm-12 mt-3">
                                 <div class="text-end">
-                                    <button class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button class="btn btn-sm btn-alt-primary">
+                                    <button class="btn btn-md btn-alt-danger">
                                         Save
                                     </button>
                                 </div>

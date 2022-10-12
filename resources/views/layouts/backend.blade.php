@@ -12,11 +12,19 @@
   <meta name="robots" content="noindex, nofollow">
 
   <!-- Icons -->
-  <link rel="shortcut icon" href="{{ asset('media/favicons/logo.png') }}">
-  <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/logo.png') }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/logo.png') }}">
-  <link rel="stylesheet" id="css-main" href="{{ asset('asset/css/dashmix.min.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('media/favicons/logo.png') }}">
+    <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/logo.png') }}">
+    link rel="stylesheet" id="css-main" href="{{ asset('asset/css/dashmix.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/froala_editor.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/froala_editor.pkgd.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/froala_style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins.pkgd.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins/files_manager.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins/file.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins/code_view.min.css">
+
   <!-- Modules -->
   @yield('css')
   @vite(['resources/sass/main.scss', 'resources/js/dashmix/app.js'])
@@ -108,117 +116,106 @@
       </div>
     </aside>
     <nav id="sidebar" aria-label="Main Navigation">
-      <div class="bg-header-dark">
+      <div class="bg-danger">
         <div class="content-header bg-white-5">
-          <a class="fw-semibold text-white tracking-wide" href="/">
+          <a class="fw-bold text-white tracking-wide" href="/">
             <span class="smini-visible">
-              D<span class="opacity-75">x</span>
+              <span class="opacity-75">x</span>
             </span>
             <span class="smini-hidden">
               PPK<span class="opacity-75">IJK</span>
             </span>
           </a>
-          <div>
-            <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#sidebar-style-toggler" data-class="fa-toggle-off fa-toggle-on" onclick="Dashmix.layout('sidebar_style_toggle');Dashmix.layout('header_style_toggle');">
-              <i class="fa fa-toggle-off" id="sidebar-style-toggler"></i>
-            </button>
-            <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#dark-mode-toggler" data-class="far fa" onclick="Dashmix.layout('dark_mode_toggle');">
-              <i class="far fa-moon" id="dark-mode-toggler"></i>
-            </button>
-            <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
-              <i class="fa fa-times-circle"></i>
-            </button>
-          </div>
         </div>
       </div>
       <div class="js-sidebar-scroll">
         <div class="content-side content-side-full">
-          <ul class="nav-main">
-            <li class="nav-main-item">
-              <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
-                <i class="nav-main-link-icon fa fa-location-arrow"></i>
-                <span class="nav-main-link-name">Dashboard</span>
-                <span class="nav-main-link-badge badge rounded-pill bg-primary">5</span>
-              </a>
-            </li>
-
-            <li class="nav-main-heading">Main Data</li>
-            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
-              <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
-                <i class="nav-main-link-icon fa fa-lightbulb"></i>
-                <span class="nav-main-link-name">Information</span>
-              </a>
-              <ul class="nav-main-submenu">
+            <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('pages/agenda') ? ' active' : '' }}" href="{{ route('agenda.index') }}">
-                      <span class="nav-main-link-name">Agenda</span>
-                    </a>
-                  </li>
-                <li class="nav-main-item">
-                  <a class="nav-main-link{{ request()->is('pages/information-category') ? ' active' : '' }}" href="{{ route('information-category.index') }}">
-                    <span class="nav-main-link-name">Information Category</span>
-                  </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('pages/add-information') ? ' active' : '' }}" href="{{ route('information.create') }}">
-                        <span class="nav-main-link-name">Add Information</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('pages/information') ? ' active' : '' }}" href="{{ route('information.index') }}">
-                        <span class="nav-main-link-name">List Information</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('pages/manage-information') ? ' active' : '' }}" href="{{ route('information.manage') }}">
-                        <span class="nav-main-link-name">Manage Information</span>
-                    </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-main-item">
-                <a class="nav-main-link{{ request()->is('pages/partner*') ? ' active' : '' }}" href="{{ route('partner.index') }}">
-                  <i class="nav-main-link-icon fa fa-handshake"></i>
-                  <span class="nav-main-link-name">Partner</span>
+                <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
+                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
+                    <span class="nav-main-link-name">Dashboard</span>
+                    <span class="nav-main-link-badge badge rounded-pill bg-primary">5</span>
                 </a>
-            </li>
-            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                </li>
+
+                <li class="nav-main-heading">Main Data</li>
+                <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
-                  <i class="nav-main-link-icon fa fa-image"></i>
-                  <span class="nav-main-link-name">Gallery</span>
+                    <i class="nav-main-link-icon fa fa-lightbulb"></i>
+                    <span class="nav-main-link-name">Information</span>
                 </a>
                 <ul class="nav-main-submenu">
-                  <li class="nav-main-item">
-                      <a class="nav-main-link{{ request()->is('pages/gallery') ? ' active' : '' }}" href="{{ route('gallery.index') }}">
-                          <span class="nav-main-link-name">Gallery</span>
-                      </a>
-                  </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link{{ request()->is('pages/agenda') ? ' active' : '' }}" href="{{ route('agenda.index') }}">
+                        <span class="nav-main-link-name">Agenda</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                    <a class="nav-main-link{{ request()->is('pages/information-category') ? ' active' : '' }}" href="{{ route('information-category.index') }}">
+                        <span class="nav-main-link-name">Information Category</span>
+                    </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link{{ request()->is('pages/add-information') ? ' active' : '' }}" href="{{ route('information.create') }}">
+                            <span class="nav-main-link-name">Add Information</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link{{ request()->is('pages/information') ? ' active' : '' }}" href="{{ route('information.index') }}">
+                            <span class="nav-main-link-name">List Information</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link{{ request()->is('pages/manage-information') ? ' active' : '' }}" href="{{ route('information.manage') }}">
+                            <span class="nav-main-link-name">Manage Information</span>
+                        </a>
+                    </li>
                 </ul>
-              </li>
-
-            <li class="nav-main-heading">Configuration</li>
-            <li class="nav-main-item">
-              <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
-                <i class="nav-main-link-icon fa fa-lightbulb"></i>
-                <span class="nav-main-link-name">Profile</span>
-              </a>
-              <ul class="nav-main-submenu">
-                <li class="nav-main-item">
-                  <a class="nav-main-link{{ request()->is('pages/profile') ? ' active' : '' }}" href="{{ route('profile.index') }}">
-                    <span class="nav-main-link-name">Setting Profile</span>
-                  </a>
                 </li>
-              </ul>
-            </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link{{ request()->is('pages/partner*') ? ' active' : '' }}" href="{{ route('partner.index') }}">
+                    <i class="nav-main-link-icon fa fa-handshake"></i>
+                    <span class="nav-main-link-name">Partner</span>
+                    </a>
+                </li>
+                <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                    <i class="nav-main-link-icon fa fa-image"></i>
+                    <span class="nav-main-link-name">Gallery</span>
+                    </a>
+                    <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link{{ request()->is('pages/gallery') ? ' active' : '' }}" href="{{ route('gallery.index') }}">
+                            <span class="nav-main-link-name">Gallery</span>
+                        </a>
+                    </li>
+                    </ul>
+                </li>
 
-            <li class="nav-main-heading">More</li>
-            <li class="nav-main-item">
-              <a class="nav-main-link" href="/">
-                <i class="nav-main-link-icon fa fa-globe"></i>
-                <span class="nav-main-link-name">Landing</span>
-              </a>
-            </li>
-          </ul>
+                <li class="nav-main-heading">Configuration</li>
+                <li class="nav-main-item">
+                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                    <i class="nav-main-link-icon fa fa-lightbulb"></i>
+                    <span class="nav-main-link-name">Profile</span>
+                </a>
+                <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                    <a class="nav-main-link{{ request()->is('pages/profile') ? ' active' : '' }}" href="{{ route('profile.index') }}">
+                        <span class="nav-main-link-name">Setting Profile</span>
+                    </a>
+                    </li>
+                </ul>
+                </li>
+
+                <li class="nav-main-heading">More</li>
+                <li class="nav-main-item">
+                <a class="nav-main-link" href="/">
+                    <i class="nav-main-link-icon fa fa-globe"></i>
+                    <span class="nav-main-link-name">Landing</span>
+                </a>
+                </li>
+            </ul>
         </div>
       </div>
     </nav>
@@ -381,7 +378,7 @@
             Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
           </div>
           <div class="col-sm-6 order-sm-1 text-center text-sm-start">
-            <a class="fw-semibold" href="http://ppk-ijk.or.id/" target="_blank">PPKIJK</a> &copy;
+            <a class="fw-semibold text-danger" href="http://ppk-ijk.or.id/" target="_blank">PPKIJK</a> &copy;
             <span data-toggle="year-copy"></span>
           </div>
         </div>
@@ -391,21 +388,45 @@
   @yield('js')
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-  <script type="text/javascript">
-        $('#summernote').summernote({
-            height: 600
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/js/froala_editor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/js/froala_editor.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/js/plugins.pkgd.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var editor = new FroalaEditor('#note');
         });
-        $('#summernote_visi').summernote({
-            height: 200
-        });
-        $('#summernote_misi').summernote({
-            height: 200
-        });
-        $('#summernote_address').summernote({
-            height: 200
+        $(document).on('change', '.image', function(){
+            var filesCount = $(this)[0].files.length;
+
+			var textbox = $(this).prev();
+
+			if (filesCount === 1) {
+                var fileName = $(this).val().split('\\').pop();
+                textbox.text(fileName);
+			} else {
+			    textbox.text(filesCount + ' files selected');
+			}
+
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = $("#previewImage");
+                dvPreview.html("");
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var img = $("<img />");
+                        img.attr("style", "width: 300px; padding: 5px");
+                        img.attr("src", e.target.result);
+                        dvPreview.append(img);
+                    }
+                    reader.readAsDataURL(file[0]);
+                });
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
+            }
         });
     </script>
 </body>

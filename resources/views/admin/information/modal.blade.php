@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-xl modal-dialog-fromright modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="block block-rounded block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
+                <div class="block-header bg-danger">
                     <h4>Update {{ $page_title }}</h4>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label>Body</label>
-                                    <textarea id="summernote" name="body" class="form-control">
+                                    <textarea id="note" name="body" class="form-control">
                                         {{ $i->body }}
                                     </textarea>
                                 </div>
@@ -54,9 +54,8 @@
                                 </div>
                                 <div class="col-sm-12 mt-3">
                                     <div class="text-end">
-                                        <button class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button class="btn btn-sm btn-alt-primary">
-                                            Save
+                                        <button class="btn btn-md btn-alt-danger">
+                                            Update
                                         </button>
                                     </div>
                                 </div>

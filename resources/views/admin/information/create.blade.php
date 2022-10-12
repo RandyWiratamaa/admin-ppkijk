@@ -38,7 +38,8 @@
                         <div class="row mb-4">
                             <div class="col-xl-6">
                                 <label>Thumbnail</label>
-                                <input type="file" class="form-control" id="thumbnail" name="thumbnail">
+                                <div id="previewImage"></div>
+                                <input type="file" class="form-control image mt-2" id="thumbnail" name="thumbnail">
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -53,7 +54,7 @@
                         </div>
                         <div class="mb-4">
                             <label>Body</label>
-                            <textarea id="summernote" name="body" class="form-control"></textarea>
+                            <textarea id="note" name="body" class="form-control"></textarea>
                         </div>
                         <div class="row mb-4">
                             <div class="col-xl-4">
@@ -63,9 +64,8 @@
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="text-end">
-                                <button class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-sm btn-alt-primary">
-                                    Save
+                                <button class="btn btn-md btn-alt-danger">
+                                    Make a Post
                                 </button>
                             </div>
                         </div>

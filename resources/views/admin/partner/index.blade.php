@@ -21,7 +21,7 @@
             <h3 class="block-title">
             Table {{ $page_title }}
             </h3>
-            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addPartner">
+            <button class="btn btn-sm btn-alt-danger" data-bs-toggle="modal" data-bs-target="#addPartner">
                 <i class="fa fa-fw fa-add"></i> Add
             </button>
         </div>

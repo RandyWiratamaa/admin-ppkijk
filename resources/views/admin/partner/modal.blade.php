@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-fromright modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="block block-rounded block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
+                <div class="block-header bg-danger">
                     <h3>Add {{ $page_title }}</h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
@@ -24,12 +24,12 @@
                             <label class="col-sm-4">Logo</label>
                         </div>
                         <div class="col-sm-12">
-                            <input type="file" class="form-control" id="logo" name="logo" placeholder="Logo">
+                            <div id="previewImage"></div>
+                            <input type="file" class="form-control image" id="logo" name="logo" placeholder="Logo">
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="text-end">
-                                <button class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-sm btn-alt-primary">
+                                <button class="btn btn-md btn-alt-danger">
                                     Save
                                 </button>
                             </div>

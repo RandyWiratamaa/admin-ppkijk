@@ -21,7 +21,7 @@
             <h3 class="block-title">
             List {{ $page_title }}
             </h3>
-            <a class="btn btn-sm btn-primary" href="{{ route('information.create') }}">
+            <a class="btn btn-sm btn-danger" href="{{ route('information.create') }}">
                 <i class="fa fa-fw fa-add"></i> Add
             </a>
         </div>

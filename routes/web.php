@@ -22,6 +22,8 @@ Route::view('/pages/slick', 'pages.slick');
 Route::view('/pages/datatables', 'pages.datatables');
 Route::view('/pages/blank', 'pages.blank');
 
+Auth::routes();
+
 Route::get('/admin/information-category', [App\Http\Controllers\Admin\InformationCategoryController::class, 'index'])->name('information-category.index');
 Route::post('/admin/information-category', [App\Http\Controllers\Admin\InformationCategoryController::class, 'store'])->name('information-category.store');
 Route::match(['put', 'patch'], '/admin/information-category/{id}', [App\Http\Controllers\Admin\InformationCategoryController::class, 'update'])->name('information-category.update');
@@ -46,3 +48,6 @@ Route::post('/admin/profile', [App\Http\Controllers\Admin\ProfileController::cla
 
 Route::get('/admin/partner', [App\Http\Controllers\Admin\PartnerController::class, 'index'])->name('partner.index');
 Route::post('/admin/partner', [App\Http\Controllers\Admin\PartnerController::class, 'store'])->name('partner.store');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
