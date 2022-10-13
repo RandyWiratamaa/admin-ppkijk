@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/information-category', [App\Http\Controllers\Api\InformationCategoryController::class, 'index'])->name('information-category.index');
 Route::get('/information', [App\Http\Controllers\Api\InformationController::class, 'index'])->name('information.index');
+Route::get('/information/{slug}', [App\Http\Controllers\Api\InformationController::class, 'detail'])->name('information.detail');
 Route::get('/agenda', [App\Http\Controllers\Api\AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/gallery', [App\Http\Controllers\Api\GalleryController::class, 'index'])->name('gallery.index');

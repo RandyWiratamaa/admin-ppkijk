@@ -15,4 +15,12 @@ class InformationController extends Controller
             'data' => $information
         ]);
     }
+
+    public function detail($slug)
+    {
+        $information = Information::orderBy('id', 'ASC')->with('information_category')->where('slug', $slug)->first();
+        return response()->json([
+            'data' => $information
+        ]);
+    }
 }
