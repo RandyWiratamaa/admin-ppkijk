@@ -9,7 +9,7 @@ class Agenda extends Model
 {
     use HasFactory;
     protected $table = 'agenda';
-    protected $dates = ['do_date'];
+    protected $dates = ['do_date', 'created_at'];
     protected $fillable = [
         'title', 'category', 'type', 'level', 'body', 'do_date'
     ];

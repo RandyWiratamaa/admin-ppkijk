@@ -9,6 +9,8 @@ class Gallery extends Model
 {
     use HasFactory;
 
+    protected $dates = ['created_at'];
+
     protected $fillable = [
         'title', 'image'
     ];

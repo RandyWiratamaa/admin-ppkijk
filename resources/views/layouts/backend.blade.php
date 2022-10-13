@@ -2,20 +2,19 @@
 <html lang="{{ config('app.locale') }}">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-  <title>Admin - PPK IJK</title>
+    <title>Admin - PPK IJK</title>
 
-  <meta name="description" content="Admin - PPK IJK">
-  <meta name="author" content="pixelcave">
-  <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Admin - PPK IJK">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
 
-  <!-- Icons -->
     <link rel="shortcut icon" href="{{ asset('media/favicons/logo.png') }}">
     <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/logo.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/logo.png') }}">
-    link rel="stylesheet" id="css-main" href="{{ asset('asset/css/dashmix.min.css') }}">
+    <link rel="stylesheet" id="css-main" href="{{ asset('asset/css/dashmix.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/froala_editor.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/froala_editor.pkgd.min.css">
@@ -25,10 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins/file.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.13/css/plugins/code_view.min.css">
 
-  <!-- Modules -->
   @yield('css')
+
   @vite(['resources/sass/main.scss', 'resources/js/dashmix/app.js'])
-  {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
 
   @yield('js')
 </head>
@@ -36,27 +34,8 @@
 <body>
   <div id="page-container" class="sidebar-o enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
     <aside id="side-overlay">
-      <div class="bg-image" style="background-image: url('{{ asset('media/various/bg_side_overlay_header.jpg') }}');">
-        <div class="bg-primary-op">
-          <div class="content-header">
-            <a class="img-link me-1" href="javascript:void(0)">
-              <img class="img-avatar img-avatar48" src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
-            </a>
-            <div class="ms-2">
-              <a class="text-white fw-semibold" href="javascript:void(0)">George Taylor</a>
-              <div class="text-white-75 fs-sm">Full Stack Developer</div>
-            </div>
-            <a class="ms-auto text-white" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_close">
-              <i class="fa fa-times-circle"></i>
-            </a>
-          </div>
-        </div>
-      </div>
       <div class="content-side">
         <div class="block pull-x mb-0">
-          <div class="block-content block-content-sm block-content-full bg-body">
-            <span class="text-uppercase fs-sm fw-bold">Sidebar</span>
-          </div>
           <div class="block-content block-content-full">
             <div class="row g-sm text-center">
               <div class="col-6 mb-1">
@@ -101,16 +80,6 @@
                 <a class="d-block py-3 bg-body-dark fw-semibold text-dark" data-toggle="layout" data-action="content_layout_full_width" href="javascript:void(0)">Full Width</a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="block pull-x mb-0">
-          <div class="block-content block-content-sm block-content-full bg-body">
-            <span class="text-uppercase fs-sm fw-bold">Heading</span>
-          </div>
-          <div class="block-content">
-            <p>
-              Content..
-            </p>
           </div>
         </div>
       </div>
@@ -264,7 +233,7 @@
             </div>
           </div>
 
-          <div class="dropdown d-inline-block">
+          {{-- <div class="dropdown d-inline-block">
             <button type="button" class="btn btn-alt-secondary" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-fw fa-bell"></i>
             </button>
@@ -337,10 +306,10 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> --}}
 
           <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="side_overlay_toggle">
-            <i class="far fa-fw fa-list-alt"></i>
+            <i class="fa fa-fw fa-cog"></i>
           </button>
         </div>
       </div>
