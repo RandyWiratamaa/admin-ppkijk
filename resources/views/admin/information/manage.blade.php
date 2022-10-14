@@ -52,7 +52,7 @@
                         @if ($i->do_date == NULL)
                             -
                         @else
-                        {{ $i->do_date->isoFormat('D M Y') }}
+                        {{ $i->do_date->isoFormat('D MMMM Y') }}
                         @endif
                     </td>
                     <td class="text-center" style="width: 10%">
@@ -62,7 +62,7 @@
                         <button class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="modal" data-bs-target="#edit{{ $i->slug }}" title="Edit">
                             <i class="fa fa-pencil-alt text-primary"></i>
                         </button>
-                        <button class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="modal" data-bs-target="#delete{{ $i->slug }}" title="Delete">
+                        <button class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="modal" data-bs-target="#hapus{{ $i->id }}" title="Delete">
                             <i class="fa fa-times text-danger"></i>
                         </button>
                     </td>

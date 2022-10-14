@@ -68,3 +68,41 @@
     </div>
 </div>
 @endforeach
+
+
+@foreach ($information as $i)
+<div class="modal fade" id="hapus{{ $i->id }}" tabindex="-1" aria-labelledby="hapus{{ $i->id }}" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-fromright modal-md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="block block-rounded block-themed block-transparent mb-0">
+                <div class="block-header bg-danger">
+                    <h3>Hapus {{ $i->title }}</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-fw fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <form action="{{ url('admin/information', $i->id) }}" class="mb-5" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('delete')
+                        <div class="row mb-2">
+                            <div class="col-12">
+                                Yakin untuk menghapus data ??
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mt-3">
+                            <div class="text-end">
+                                <button class="btn btn-sm btn-alt-danger">
+                                    Yes, Delete
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach

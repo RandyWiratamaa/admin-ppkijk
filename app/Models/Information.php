@@ -11,7 +11,7 @@ class Information extends Model
     protected $fillable = [
         'title', 'slug', 'thumbnail'
     ];
-    protected $dates = ['created_at'];
+    protected $dates = ['do_date', 'created_at'];
 
     public function information_category()
     {

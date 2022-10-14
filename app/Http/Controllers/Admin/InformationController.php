@@ -45,6 +45,7 @@ class InformationController extends Controller
         $information->slug = Str::slug($req->title, '-');
         $information->thumbnail = $newName;
         $information->body = $req->body;
+        $information->do_date = $req->do_date;
         $information->save();
 
         if ($information) {
@@ -103,10 +104,11 @@ class InformationController extends Controller
             $information->slug = Str::slug($request->title, '-');
             $information->thumbnail = $newName;
             $information->body = $request->body;
+            $information->do_date = $request->do_date;
             $information->save();
             if ($information) {
                 return redirect()
-                    ->route('information.index')
+                    ->route('information.manage')
                     ->with([
                         alert()->success('Success', 'Information Updated Successfully')
                     ]);
@@ -122,10 +124,11 @@ class InformationController extends Controller
             $information->title = $request->title;
             $information->slug = Str::slug($request->title, '-');
             $information->body = $request->body;
+            $information->do_date = $request->do_date;
             $information->save();
             if ($information) {
                 return redirect()
-                    ->route('information.index')
+                    ->route('information.manage')
                     ->with([
                         alert()->success('Success', 'Information Updated Successfully')
                     ]);
@@ -136,6 +139,25 @@ class InformationController extends Controller
                         alert()->error('Error', 'Failed')
                     ]);
             }
+        }
+    }
+
+    public function destroy($id)
+    {
+        $information = Information::findOrFail($id);
+        $information->delete();
+        if ($information) {
+            return redirect()
+                ->route('information.manage')
+                ->with([
+                    alert()->success('Success', 'Information Deleted Successfully')
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->with([
+                    alert()->error('Error', 'Failed')
+                ]);
         }
     }
 }
