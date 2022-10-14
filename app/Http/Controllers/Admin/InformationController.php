@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class InformationController extends Controller
 {
+    public function __construct()
+    {
+        $this->path = public_path('asset/admin/information_thumbnail');
+    }
 
     public function index()
     {
@@ -73,5 +77,65 @@ class InformationController extends Controller
         $page_type = "Detail";
         $information = Information::where('slug', $slug)->first();
         return view('admin.information.detail', get_defined_vars());
+    }
+
+    public function update(Request $request, $slug)
+    {
+        $information = Information::firstWhere('slug', $slug);
+
+        if($request->thumbnail != '' || $request->thumbnail != null) {
+            if(File::exists($this->path .'/'. $information->thumbnail))
+            {
+                File::delete($this->path.'/'.$information->thumbnail);
+            }
+            if (!File::isDirectory($this->path)) {
+                File::makeDirectory($this->path);
+            }
+
+            $file = $request->file('thumbnail');
+            $name = time();
+            $extension = $file->getClientOriginalExtension();
+            $newName = $name .'.'. $extension;
+            $path = $file->move('asset/admin/information_thumbnail');
+
+            $information->category_id = $request->category_id;
+            $information->title = $request->title;
+            $information->slug = Str::slug($request->title, '-');
+            $information->thumbnail = $newName;
+            $information->body = $request->body;
+            $information->save();
+            if ($information) {
+                return redirect()
+                    ->route('information.index')
+                    ->with([
+                        alert()->success('Success', 'Information Updated Successfully')
+                    ]);
+            } else {
+                return redirect()
+                    ->back()
+                    ->with([
+                        alert()->error('Error', 'Failed')
+                    ]);
+            }
+        } else {
+            $information->category_id = $request->category_id;
+            $information->title = $request->title;
+            $information->slug = Str::slug($request->title, '-');
+            $information->body = $request->body;
+            $information->save();
+            if ($information) {
+                return redirect()
+                    ->route('information.index')
+                    ->with([
+                        alert()->success('Success', 'Information Updated Successfully')
+                    ]);
+            } else {
+                return redirect()
+                    ->back()
+                    ->with([
+                        alert()->error('Error', 'Failed')
+                    ]);
+            }
+        }
     }
 }

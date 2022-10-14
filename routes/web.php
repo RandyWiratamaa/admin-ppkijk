@@ -38,6 +38,7 @@ Route::get('/admin/information/create', [App\Http\Controllers\Admin\InformationC
 Route::post('admin/information', [App\Http\Controllers\Admin\InformationController::class, 'store'])->name('information.store');
 Route::get('/admin/information/manage', [App\Http\Controllers\Admin\InformationController::class, 'manage'])->name('information.manage');
 Route::get('/admin/information/detail/{slug}', [App\Http\Controllers\Admin\InformationController::class, 'detail'])->name('information.detail');
+Route::match(['put', 'patch'], '/admin/information/{slug}', [App\Http\Controllers\Admin\InformationController::class, 'update'])->name('information.update');
 
 Route::get('/admin/agenda', [App\Http\Controllers\Admin\AgendaController::class, 'index'])->name('agenda.index');
 Route::post('/admin/agenda', [App\Http\Controllers\Admin\AgendaController::class, 'store'])->name('agenda.store');

@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="block-content">
-                    <form action="#" class="mb-5" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('admin/information/'.$i->slug) }}" class="mb-5" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="row justify-content-center push">
