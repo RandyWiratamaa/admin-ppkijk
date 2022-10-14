@@ -14,19 +14,30 @@
                     </div>
                     <div class="row g-0 justify-content-center">
                         <div class="col-sm-8 col-xl-6">
-                            <form class="js-validation-signin" action="be_pages_auth_all.html" method="POST">
+                            <form class="js-validation-signin" action="{{ route('login') }}" method="POST">
+                                @csrf
                                 <div class="py-3">
                                     <div class="mb-4">
-                                        <input type="text" class="form-control form-control-lg form-control-alt" id="login-username" name="login-username" placeholder="Username">
+                                        <input type="email" class="form-control form-control-lg form-control-alt @error('email') is-invalid @enderror" id="email" name="email" placeholder="Username">
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="mb-4">
-                                        <input type="password" class="form-control form-control-lg form-control-alt" id="login-password" name="login-password" placeholder="Password">
+                                        <input type="password" class="form-control form-control-lg form-control-alt @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <a href="/dashboard" type="submit" class="btn w-100 btn-lg btn-hero btn-danger">
+                                    <button type="submit" class="btn w-100 btn-lg btn-hero btn-danger">
                                         <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Sign In
-                                    </a>
+                                    </button>
                                 </div>
                             </form>
                         </div>

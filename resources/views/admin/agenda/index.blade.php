@@ -21,7 +21,7 @@
                 <h3 class="block-title">
                     List {{ $page_title }}
                 </h3>
-                <a class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addAgenda">
+                <a class="btn btn-sm btn-alt-danger" data-bs-toggle="modal" data-bs-target="#addAgenda">
                     <i class="fa fa-fw fa-add"></i> Add
                 </a>
             </div>
@@ -55,7 +55,7 @@
                                             <i class="fa fa-pencil-alt text-primary"></i>
                                         </button>
                                         <button class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="modal" data-bs-target="#deleteAgenda{{ $i->id }}" title="Delete">
-                                            <i class="fa fa-trash text-danger"></i>
+                                            <i class="fa fa-times text-danger"></i>
                                         </button>
                                     </td>
                                 </tr>

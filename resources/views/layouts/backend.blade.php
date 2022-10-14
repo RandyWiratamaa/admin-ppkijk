@@ -104,7 +104,7 @@
                 <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
                     <i class="nav-main-link-icon fa fa-location-arrow"></i>
                     <span class="nav-main-link-name">Dashboard</span>
-                    <span class="nav-main-link-badge badge rounded-pill bg-primary">5</span>
+                    <span class="nav-main-link-badge badge rounded-pill bg-danger">5</span>
                 </a>
                 </li>
 
@@ -226,8 +226,11 @@
                   <i class="far fa-fw fa-building me-1"></i> Settings
                 </a>
                 <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0)">
-                  <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </a>
               </div>
             </div>

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl modal-dialog-fromright modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="block block-rounded block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
+                <div class="block-header bg-danger">
                     <h3>Add {{ $page_title }}</h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
@@ -64,8 +64,7 @@
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="text-end">
-                                <button class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-sm btn-alt-primary">
+                                <button class="btn btn-md btn-alt-danger">
                                     Save
                                 </button>
                             </div>
@@ -84,7 +83,7 @@
     <div class="modal-dialog modal-xl modal-dialog-fromright modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="block block-rounded block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
+                <div class="block-header bg-danger">
                     <h3>Edit {{ $page_title }}</h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
@@ -135,19 +134,19 @@
                             <label>Isi</label>
                         </div>
                         <div class="col-sm-12">
-                            <textarea id="summernote" name="body" class="form-control">
-                                {!! $i->body !!}
+                            <textarea id="note" name="body" class="form-control">
+                                {{ $i->body }}
                             </textarea>
                         </div>
                         <div class="row mb-2 mt-3">
                             <label>Tanggal Pelaksanaan</label>
                         </div>
                         <div class="col-sm-12">
-                            <input type="date" class="form-control" name="do_date">
+                            <input type="date" class="form-control" name="do_date" value="{{ $i->do_date->isoFormat('Y-M-D') }}">
                         </div>
                         <div class="col-sm-12 mt-3">
                             <div class="text-end">
-                                <button class="btn btn-sm btn-alt-primary">
+                                <button class="btn btn-md btn-alt-danger">
                                     Save
                                 </button>
                             </div>
