@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use App\Models\InformationCategory;
 use Illuminate\Http\Request;
 
-class InformationCategoryController extends Controller
+class InformationCategoryController extends ApiController
 {
     public function index()
     {
         $information_category = InformationCategory::all();
-        return response()->json([
-            'information_category' => $information_category
-        ]);
+        return $this->showAll($information_category);
     }
 }

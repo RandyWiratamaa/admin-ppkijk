@@ -4,15 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Agenda;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 
-class AgendaController extends Controller
+class AgendaController extends ApiController
 {
     public function index()
     {
         $agenda = Agenda::all();
-        return response()->json([
-            'agenda' => $agenda
-        ]);
+        return $this->showAll($agenda);
     }
 }
